@@ -4,6 +4,210 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E5E5E5"
     tools:context=".ui.feature.auth.register.RegisterActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bg_batik"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/bg_batik"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/name"
+        tools:ignore="ContentDescription" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="262dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        app:cardBackgroundColor="#EDFFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/gamastik"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/gamastik"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="33dp"
+                    android:text="@string/name"
+                    android:fontFamily="@font/capriola_regular"
+                    android:textColor="@color/black"
+                    android:textSize="9sp"
+                    tools:ignore="SmallSp"
+                    app:layout_constraintStart_toStartOf="@id/edt_name_reg"
+                    app:layout_constraintTop_toBottomOf="@+id/gamastik" />
+
+                <EditText
+                    android:id="@+id/edt_name_reg"
+                    style="@style/edit_text_login"
+                    android:inputType="textPersonName"
+                    android:hint="@string/insert_your_name"
+                    app:layout_constraintTop_toBottomOf="@id/name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:importantForAutofill="no" />
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/e_mail"
+                    android:fontFamily="@font/capriola_regular"
+                    android:textColor="@color/black"
+                    android:textSize="9sp"
+                    tools:ignore="SmallSp"
+                    app:layout_constraintStart_toStartOf="@id/edt_email_reg"
+                    app:layout_constraintTop_toBottomOf="@id/edt_name_reg"/>
+
+                <EditText
+                    android:id="@+id/edt_email_reg"
+                    style="@style/edit_text_login"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/insert_your_email"
+                    app:layout_constraintTop_toBottomOf="@id/email"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:importantForAutofill="no"/>
+
+                <TextView
+                    android:id="@+id/password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/password"
+                    android:fontFamily="@font/capriola_regular"
+                    android:textColor="@color/black"
+                    android:textSize="9sp"
+                    tools:ignore="SmallSp"
+                    app:layout_constraintStart_toStartOf="@id/edt_password_reg"
+                    app:layout_constraintTop_toBottomOf="@id/edt_email_reg"/>
+
+                <EditText
+                    android:id="@+id/edt_password_reg"
+                    style="@style/edit_text_login"
+                    android:inputType="textPassword"
+                    android:hint="@string/insert_your_new_password"
+                    app:layout_constraintTop_toBottomOf="@id/password"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:importantForAutofill="no"/>
+
+                <TextView
+                    android:id="@+id/re_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="@string/re_password"
+                    android:fontFamily="@font/capriola_regular"
+                    android:textColor="@color/black"
+                    android:textSize="9sp"
+                    tools:ignore="SmallSp"
+                    app:layout_constraintStart_toStartOf="@id/edt_re_password_reg"
+                    app:layout_constraintTop_toBottomOf="@id/edt_password_reg"/>
+
+                <EditText
+                    android:id="@+id/edt_re_password_reg"
+                    style="@style/edit_text_login"
+                    android:inputType="textPassword"
+                    android:hint="@string/insert_your_new_password_again"
+                    app:layout_constraintTop_toBottomOf="@id/re_password"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:importantForAutofill="no"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_marginTop="75dp"
+                    android:backgroundTint="#FA8624"
+                    android:fontFamily="@font/capriola_regular"
+                    android:text="@string/register"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:letterSpacing="0"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/re_password" />
+
+                <ImageView
+                    android:id="@+id/line1"
+                    android:layout_width="193dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_register"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/capriola_regular"
+                    android:text="@string/already_have_an_account"
+                    android:textColor="@color/black"
+                    android:textSize="7sp"
+                    tools:ignore="SmallSp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/line1"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_login"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/capriola_regular"
+                    android:text="@string/login"
+                    android:textColor="#FA8624"
+                    android:textSize="7sp"
+                    tools:ignore="SmallSp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/textView7"
+                    app:layout_constraintTop_toTopOf="@+id/textView7" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

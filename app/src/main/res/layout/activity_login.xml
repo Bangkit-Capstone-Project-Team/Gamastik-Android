@@ -4,6 +4,190 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E5E5E5"
     tools:context=".ui.feature.auth.login.LoginActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bg_batik"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="180"
+        android:src="@drawable/bg_batik"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="262dp"
+        android:layout_height="321dp"
+        app:cardCornerRadius="15dp"
+        app:cardBackgroundColor="#EDFFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/gamastik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/gamastik"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="33dp"
+                android:fontFamily="@font/capriola_regular"
+                android:text="@string/e_mail"
+                android:textColor="@color/black"
+                android:textSize="9sp"
+                tools:ignore="SmallSp"
+                app:layout_constraintStart_toStartOf="@+id/edt_email_login"
+                app:layout_constraintTop_toBottomOf="@+id/gamastik" />
+
+            <EditText
+                android:id="@+id/edt_email_login"
+                android:layout_width="205dp"
+                android:layout_height="27dp"
+                style="@style/edit_text_login"
+                android:hint="@string/insert_your_email"
+                android:inputType="textEmailAddress"
+                tools:ignore="SmallSp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email"
+                android:importantForAutofill="no"/>
+
+            <TextView
+                android:id="@+id/password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:fontFamily="@font/capriola_regular"
+                android:text="@string/password"
+                android:textColor="@color/black"
+                android:textSize="9sp"
+                tools:ignore="SmallSp"
+                app:layout_constraintStart_toStartOf="@+id/edt_password_login"
+                app:layout_constraintTop_toBottomOf="@+id/edt_email_login" />
+
+            <EditText
+                android:id="@+id/edt_password_login"
+                android:layout_width="205dp"
+                android:layout_height="27dp"
+                style="@style/edit_text_login"
+                android:hint="@string/insert_your_password"
+                android:inputType="textPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/password"
+                tools:ignore="SmallSp"
+                android:importantForAutofill="no"/>
+
+            <TextView
+                android:id="@+id/forget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="@font/capriola_regular"
+                android:text="@string/forget_password"
+                android:textColor="@color/black"
+                android:textSize="7sp"
+                tools:ignore="SmallSp"
+                app:layout_constraintEnd_toStartOf="@+id/forget_password"
+                app:layout_constraintTop_toBottomOf="@+id/edt_password_login" />
+
+            <TextView
+                android:id="@+id/forget_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:fontFamily="@font/capriola_regular"
+                android:text="@string/tap_here"
+                android:textColor="#FA8624"
+                android:textSize="7sp"
+                tools:ignore="SmallSp"
+                app:layout_constraintEnd_toEndOf="@+id/edt_password_login"
+                app:layout_constraintTop_toBottomOf="@+id/edt_password_login" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="#FA8624"
+                android:fontFamily="@font/capriola_regular"
+                android:text="@string/login"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:letterSpacing="0"
+                app:cornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/forget" />
+
+            <ImageView
+                android:id="@+id/line1"
+                android:layout_width="193dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_login"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/capriola_regular"
+                android:text="@string/dont_have_an_account"
+                android:textColor="@color/black"
+                android:textSize="7sp"
+                tools:ignore="SmallSp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/line1"
+                app:layout_constraintEnd_toStartOf="@+id/tv_register"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/capriola_regular"
+                android:text="@string/register"
+                android:textColor="#FA8624"
+                android:textSize="7sp"
+                tools:ignore="SmallSp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/textView7"
+                app:layout_constraintTop_toTopOf="@+id/textView7" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

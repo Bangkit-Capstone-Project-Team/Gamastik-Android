@@ -13,7 +13,6 @@
         <activity android:name=".ui.feature.recomendation.ProductRecomendationActivity" />
         <activity android:name=".ui.feature.quiz.quiztest.QuizTestActivity" />
         <activity android:name=".ui.feature.quiz.quizscore.QuizScoreActivity" />
-        <activity android:name=".ui.feature.quiz.quizmain.QuizMainActivity" />
         <activity android:name=".ui.feature.discovery.searchresult.SearchResultActivity" />
         <activity android:name=".ui.feature.discovery.batikdetail.BatikDetailActivity" />
         <activity android:name=".ui.feature.auth.register.RegisterActivity" />

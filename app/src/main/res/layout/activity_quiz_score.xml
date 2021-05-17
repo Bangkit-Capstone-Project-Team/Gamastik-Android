@@ -134,7 +134,6 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="false"
         android:src="@drawable/icon_back"
         android:layout_margin="8dp"
         app:layout_constraintStart_toStartOf="parent"

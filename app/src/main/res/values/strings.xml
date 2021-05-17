@@ -29,4 +29,9 @@
     <string name="_75">75</string>
     <string name="percent">%</string>
     <string name="back_button">Back Button</string>
+    <string name="text_discover_batik_indonesia">Discover Batik Indonesia</string>
+    <string name="text_hint_search">Search batik here ...</string>
+    <string name="text_by_region">By Region</string>
+    <string name="text_sample_regio">Jawa Barat</string>
+    <string name="text_top_batik">Top Batik</string>
 </resources>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bangkit.gamastik">
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera.any" />
 
     <application
         android:allowBackup="true"
@@ -9,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Gamastik">
-        <activity android:name=".ui.feature.scanner.ScannerResultActivity" />
+        <activity android:name=".ui.feature.batik.scanner.BatikScannerActivity" />
+        <activity android:name=".ui.feature.batik.result.ScannerResultActivity" />
         <activity android:name=".ui.feature.recomendation.ProductRecomendationActivity" />
         <activity android:name=".ui.feature.quiz.quiztest.QuizTestActivity" />
         <activity android:name=".ui.feature.quiz.quizscore.QuizScoreActivity" />
@@ -20,7 +23,8 @@
         <activity
             android:name=".ui.main.MainActivity"
             android:label="@string/title_activity_main" />
-        <activity android:name=".ui.feature.intro.SplashActivity"
+        <activity
+            android:name=".ui.feature.intro.SplashActivity"
             android:theme="@style/Theme.Gamastik.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

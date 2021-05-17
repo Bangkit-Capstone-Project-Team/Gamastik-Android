@@ -34,4 +34,6 @@
     <string name="text_by_region">By Region</string>
     <string name="text_sample_regio">Jawa Barat</string>
     <string name="text_top_batik">Top Batik</string>
+    <string name="text_see_product_recommendations">See product recommendations</string>
+    <string name="text_result">Result</string>
 </resources>

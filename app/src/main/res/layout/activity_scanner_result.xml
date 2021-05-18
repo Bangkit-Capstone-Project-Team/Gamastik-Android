@@ -7,7 +7,7 @@
     tools:context=".ui.feature.batik.result.ScannerResultActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/iv_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -33,7 +33,7 @@
         <ImageView
             android:id="@+id/iv_batik_result"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="300dp"
             android:scaleType="fitXY"
             android:src="@drawable/img_sample_batik" />
     </androidx.cardview.widget.CardView>

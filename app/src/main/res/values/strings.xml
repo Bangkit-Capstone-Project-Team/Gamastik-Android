@@ -36,4 +36,9 @@
     <string name="text_top_batik">Top Batik</string>
     <string name="text_see_product_recommendations">See product recommendations</string>
     <string name="text_result">Result</string>
+    <string name="text_submit">Submit</string>
+    <string name="text_b">B</string>
+    <string name="text_a">A</string>
+    <string name="text_c">C</string>
+    <string name="text_d">D</string>
 </resources>

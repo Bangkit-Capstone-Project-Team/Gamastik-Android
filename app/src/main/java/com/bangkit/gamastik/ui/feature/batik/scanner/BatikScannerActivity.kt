@@ -61,7 +61,7 @@ class BatikScannerActivity : AppCompatActivity() {
                 this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
         }
         // Set up the listener for take photo button
-        binding.buttonCapture.setOnClickListener { takePhoto() }
+        binding.btnCapture.setOnClickListener { takePhoto() }
 
         outputDirectory = getOutputDirectory()
 

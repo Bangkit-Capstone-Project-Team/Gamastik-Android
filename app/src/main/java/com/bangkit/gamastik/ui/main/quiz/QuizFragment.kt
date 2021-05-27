@@ -10,8 +10,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bangkit.gamastik.R
+import com.bangkit.gamastik.ui.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
-class QuizFragment : Fragment() {
+@AndroidEntryPoint
+class QuizFragment : BaseFragment() {
 
     private lateinit var quizViewModel: QuizViewModel
 

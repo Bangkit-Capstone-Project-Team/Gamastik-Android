@@ -11,7 +11,9 @@ import com.bangkit.gamastik.R
 import com.bangkit.gamastik.databinding.ActivityMainBinding
 import com.bangkit.gamastik.ui.feature.batik.scanner.BatikScannerActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 

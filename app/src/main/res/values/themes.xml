@@ -30,6 +30,7 @@
         <item name="android:fontFamily">@font/capriola_regular</item>
         <item name="android:paddingStart">8dp</item>
         <item name="android:paddingEnd">8dp</item>
+        <item name="android:textColor">@color/black</item>
         <item name="android:textColorHint">#E6E6E6</item>
         <item name="android:textSize">9sp</item>
     </style>

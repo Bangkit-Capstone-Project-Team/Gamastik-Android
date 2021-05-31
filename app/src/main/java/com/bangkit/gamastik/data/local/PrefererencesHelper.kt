@@ -32,7 +32,7 @@ constructor(@ApplicationContext context: Context) {
     }
 
     fun getUserToken(): String? {
-        return preferences.getString(TOKEN, "")
+        return preferences.getString(TOKEN, null)
     }
 
     fun getUserName(): String? {

@@ -11,6 +11,10 @@ class RemoteDataSource @Inject constructor(
     private val appService: AppService,
 ) : BaseDataSource() {
 
+    suspend fun getUserId() = getResult { appService.getUserId() }
+
+    suspend fun getProfile(id: Int) = getResult { appService.getProfile(id) }
+
     suspend fun register(@Body request: RegisterRequest) =
         getResult { appService.register(request) }
 

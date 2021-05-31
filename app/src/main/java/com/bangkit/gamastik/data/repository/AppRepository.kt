@@ -11,6 +11,15 @@ import javax.inject.Inject
 class AppRepository @Inject constructor(
     private val remoteDataSource: RemoteDataSource
 ) {
+
+    fun getUserId() = remoteOnlyOperation(
+        networkCall = { remoteDataSource.getUserId() }
+    )
+
+    fun getProfile(id: Int) = remoteOnlyOperation(
+        networkCall = { remoteDataSource.getProfile(id) }
+    )
+
     fun register(@Body request: RegisterRequest) = remoteOnlyOperation(
         networkCall = { remoteDataSource.register(request) }
     )

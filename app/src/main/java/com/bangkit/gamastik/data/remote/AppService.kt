@@ -1,9 +1,11 @@
 package com.bangkit.gamastik.data.remote
 
 
+import com.bangkit.gamastik.data.model.auth.id.IdResponse
 import com.bangkit.gamastik.data.model.auth.login.LoginRequest
 import com.bangkit.gamastik.data.model.auth.login.LoginResponse
 import com.bangkit.gamastik.data.model.auth.logout.LogoutResponse
+import com.bangkit.gamastik.data.model.auth.profile.ProfileResponse
 import com.bangkit.gamastik.data.model.auth.register.RegisterRequest
 import com.bangkit.gamastik.data.model.auth.register.RegisterResponse
 import com.bangkit.gamastik.data.model.batik.detail.BatikDetailResponse
@@ -20,6 +22,12 @@ import retrofit2.http.Path
 
 interface AppService {
 
+    @GET("id")
+    suspend fun getUserId(): Response<IdResponse>
+
+    @GET("profile/{id}")
+    suspend fun getProfile(@Path("id") id: Int): Response<ProfileResponse>
+
     @POST("register")
     suspend fun register(@Body request: RegisterRequest): Response<RegisterResponse>
 
@@ -35,7 +43,7 @@ interface AppService {
     @GET("batik/{id}")
     suspend fun getBatikDetail(@Path("id") id: Int): Response<BatikDetailResponse>
 
-    @GET("batik/search")
+    @POST("batik/search")
     suspend fun getBatikSearch(@Body request: BatikSearchRequest): Response<List<BatikSearchResponseItem>>
 
     @GET("quiz")

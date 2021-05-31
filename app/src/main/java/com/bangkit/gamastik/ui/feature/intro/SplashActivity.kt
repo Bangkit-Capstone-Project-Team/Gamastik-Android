@@ -1,7 +1,6 @@
 package com.bangkit.gamastik.ui.feature.intro
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.bangkit.gamastik.R
@@ -21,7 +20,7 @@ class SplashActivity : BaseActivity() {
     }
 
     private fun checklogin() {
-        val intent: Intent = if (getToken() != null) {
+        val intent: Intent = if (getToken() != null && getToken()?.isNotEmpty() == true) {
             Intent(this, MainActivity::class.java)
         } else {
             Intent(this, LoginActivity::class.java)

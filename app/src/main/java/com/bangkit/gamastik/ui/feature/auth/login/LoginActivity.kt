@@ -11,7 +11,7 @@ import com.bangkit.gamastik.ui.base.BaseActivity
 import com.bangkit.gamastik.ui.feature.auth.register.RegisterActivity
 import com.bangkit.gamastik.ui.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
-import gov.ulama.uttp.utils.Resource
+import com.bangkit.gamastik.utils.Resource
 
 @AndroidEntryPoint
 class LoginActivity : BaseActivity() {

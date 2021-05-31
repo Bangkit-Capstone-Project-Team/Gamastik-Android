@@ -2,7 +2,6 @@ package com.bangkit.gamastik.utils
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
-import gov.ulama.uttp.utils.Resource
 import kotlinx.coroutines.Dispatchers
 
 fun <A> remoteOnlyOperation(

@@ -1,6 +1,5 @@
 package com.bangkit.gamastik.utils
 
-import gov.ulama.uttp.utils.Resource
 import retrofit2.Response
 
 abstract class BaseDataSource {

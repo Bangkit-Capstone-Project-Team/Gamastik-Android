@@ -8,7 +8,7 @@ import com.bangkit.gamastik.data.model.auth.register.RegisterRequest
 import com.bangkit.gamastik.databinding.ActivityRegisterBinding
 import com.bangkit.gamastik.ui.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
-import gov.ulama.uttp.utils.Resource
+import com.bangkit.gamastik.utils.Resource
 
 @AndroidEntryPoint
 class RegisterActivity : BaseActivity() {

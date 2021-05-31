@@ -5,13 +5,6 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class BatikDiscoveryResponse(
-
-	@field:SerializedName("BatikDiscoveryResponse")
-	val batikDiscoveryResponse: List<BatikDiscoveryResponseItem>? = null
-) : Parcelable
-
-@Parcelize
 data class BatikDiscoveryResponseItem(
 
 	@field:SerializedName("daerah_batik")

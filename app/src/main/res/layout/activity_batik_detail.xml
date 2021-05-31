@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.feature.discovery.batikdetail.BatikDetailActivity">
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:elevation="@dimen/large_dimen"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <ImageView
         android:id="@+id/iv_back"
         android:layout_width="wrap_content"
@@ -35,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:scaleType="fitXY"
-            android:src="@drawable/img_sample_batik" />
+            tools:src="@drawable/img_sample_batik" />
     </androidx.cardview.widget.CardView>
 
 
@@ -46,7 +59,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Nama Batik"
+        tools:text="Nama Batik"
+        android:textStyle="bold"
+        android:textSize="@dimen/xxlarge_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +74,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
-        android:text="Asal Daerah"
+        tools:text="Asal Daerah"
+        android:textSize="@dimen/large_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +89,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel dui vitae ante tempor vehicula. Nulla facilisi. Integer quis magna id nisi aliquam placerat sed faucibus ligula. Cras faucibus ante sed tortor volutpat posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus ac pharetra odio. Curabitur in lectus cursus, molestie neque nec, tristique eros. Duis quam justo, condimentum at tortor sit amet, dapibus finibus est. Curabitur augue lorem, lobortis aliquam nibh vitae, tincidunt efficitur lorem. Morbi vel enim volutpat ligula interdum interdum. Praesent semper "
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel dui vitae ante tempor vehicula. Nulla facilisi. Integer quis magna id nisi aliquam placerat sed faucibus ligula. Cras faucibus ante sed tortor volutpat posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus ac pharetra odio. Curabitur in lectus cursus, molestie neque nec, tristique eros. Duis quam justo, condimentum at tortor sit amet, dapibus finibus est. Curabitur augue lorem, lobortis aliquam nibh vitae, tincidunt efficitur lorem. Morbi vel enim volutpat ligula interdum interdum. Praesent semper "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_batik_region" />

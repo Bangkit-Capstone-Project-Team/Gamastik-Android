@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.feature.batik.scanner.BatikScannerActivity">
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:elevation="@dimen/large_dimen"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +37,7 @@
 
     <androidx.camera.view.PreviewView
         android:id="@+id/viewFinder"
-        android:layout_width="300dp"
+        android:layout_width="400dp"
         android:layout_height="400dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="120dp"

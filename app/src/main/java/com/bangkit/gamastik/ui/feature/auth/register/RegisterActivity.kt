@@ -28,6 +28,9 @@ class RegisterActivity : BaseActivity() {
             val repassword = binding.edtRePasswordReg.text.toString()
             register(RegisterRequest(name, email, password, repassword))
         }
+        binding.tvLogin.setOnClickListener {
+            finish()
+        }
 
     }
 

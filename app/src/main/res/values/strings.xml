@@ -41,4 +41,6 @@
     <string name="text_a">A</string>
     <string name="text_c">C</string>
     <string name="text_d">D</string>
+    <string name="finish">Finish</string>
+    <string name="next_question">Go to Next Question</string>
 </resources>

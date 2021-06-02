@@ -114,7 +114,7 @@
                 android:fontFamily="@font/capriola_regular"
                 android:text="@string/password"
                 android:textColor="@color/black"
-                android:textSize="9sp"
+                android:textSize="@dimen/normal_text"
                 app:layout_constraintStart_toStartOf="@+id/linearLayout2"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout"
                 tools:ignore="SmallSp" />

@@ -48,7 +48,8 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:scaleType="fitXY"
-            tools:src="@drawable/img_sample_batik" />
+            tools:src="@drawable/img_sample_batik"
+            android:contentDescription="@string/image_batik" />
     </androidx.cardview.widget.CardView>
 
 

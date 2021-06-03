@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class QuizTestViewModel @Inject constructor(
-    private val repository: AppRepository
+    repository: AppRepository
 ): ViewModel() {
 
     val quizQuestion = repository.getQuizQuestion()

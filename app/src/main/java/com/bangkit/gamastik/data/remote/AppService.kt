@@ -8,7 +8,7 @@ import com.bangkit.gamastik.data.model.auth.logout.LogoutResponse
 import com.bangkit.gamastik.data.model.auth.profile.ProfileResponse
 import com.bangkit.gamastik.data.model.auth.register.RegisterRequest
 import com.bangkit.gamastik.data.model.auth.register.RegisterResponse
-import com.bangkit.gamastik.data.model.batik.BatikByRegionResponse
+import com.bangkit.gamastik.data.model.batik.byregion.BatikByRegionResponse
 import com.bangkit.gamastik.data.model.batik.byregion.BatikByRegionRequest
 import com.bangkit.gamastik.data.model.batik.detail.BatikDetailResponse
 import com.bangkit.gamastik.data.model.batik.discovery.BatikDiscoveryResponseItem

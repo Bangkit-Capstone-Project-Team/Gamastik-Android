@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.gamastik.R
-import com.bangkit.gamastik.data.model.batik.BatikByRegion
+import com.bangkit.gamastik.data.model.batik.byregion.BatikByRegion
 import com.bangkit.gamastik.databinding.ItemListBatikBinding
 import com.bumptech.glide.Glide
 

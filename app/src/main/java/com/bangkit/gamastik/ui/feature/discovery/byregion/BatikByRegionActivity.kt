@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import com.bangkit.gamastik.data.model.batik.BatikByRegion
+import com.bangkit.gamastik.data.model.batik.byregion.BatikByRegion
 import com.bangkit.gamastik.data.model.batik.byregion.BatikByRegionRequest
 import com.bangkit.gamastik.databinding.ActivityBatikByRegionBinding
 import com.bangkit.gamastik.ui.feature.discovery.batikdetail.BatikDetailActivity

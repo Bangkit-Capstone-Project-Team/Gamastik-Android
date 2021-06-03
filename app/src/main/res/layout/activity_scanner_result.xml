@@ -35,7 +35,8 @@
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/img_sample_batik" />
+            tools:src="@drawable/img_sample_batik"
+            android:contentDescription="@string/image_batik" />
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.button.MaterialButton
@@ -88,7 +89,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Mega Mendung"
+                tools:text="Mega Mendung"
                 android:textSize="@dimen/xlarge_text"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -1,4 +1,4 @@
-package com.bangkit.gamastik.data.model.batik
+package com.bangkit.gamastik.data.model.batik.byregion
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

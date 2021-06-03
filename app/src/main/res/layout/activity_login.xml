@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E5E5E5"
+    android:background="@color/grey"
     tools:context=".ui.feature.auth.login.LoginActivity">
 
     <ProgressBar
@@ -103,7 +103,8 @@
                     android:hint="@string/insert_your_email"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/large_text" />
+                    android:textSize="@dimen/large_text"
+                    android:importantForAutofill="no" />
             </LinearLayout>
 
             <TextView
@@ -144,7 +145,8 @@
                     android:hint="@string/insert_your_password"
                     android:inputType="textPassword"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/large_text" />
+                    android:textSize="@dimen/large_text"
+                    android:importantForAutofill="no" />
             </LinearLayout>
 
             <TextView

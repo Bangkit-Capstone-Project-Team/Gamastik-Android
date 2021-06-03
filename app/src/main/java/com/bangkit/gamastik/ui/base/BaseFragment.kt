@@ -1,6 +1,5 @@
 package com.bangkit.gamastik.ui.base
 
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.bangkit.gamastik.data.local.PreferencesHelper
 import dagger.hilt.android.AndroidEntryPoint
@@ -11,7 +10,7 @@ open class BaseFragment : Fragment() {
     @Inject
     lateinit var preferencesHelper: PreferencesHelper
 
-    fun setToken(token: String?){
+    fun setToken(token: String?) {
         preferencesHelper.setUserToken(token)
     }
 
@@ -19,8 +18,6 @@ open class BaseFragment : Fragment() {
         preferencesHelper.setUserName(name)
     }
 
-    fun getToken() = preferencesHelper.getUserToken()
-
-    fun getUserName() = preferencesHelper.getUserName()
+    fun getUsername() = preferencesHelper.getUserName()
 
 }

@@ -36,7 +36,7 @@ constructor(@ApplicationContext context: Context) {
     }
 
     fun getUserName(): String? {
-        return preferences.getString(NAME, "")
+        return preferences.getString(NAME, null)
     }
 
 

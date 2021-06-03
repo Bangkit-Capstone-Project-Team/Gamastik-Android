@@ -63,7 +63,7 @@ class SearchResultActivity : BaseActivity(), SearchResultAdapter.ResultItemListe
                     binding.progressBar.visibility = View.GONE
                     val data = it.data
                     if (data != null) {
-                        it.data.let { it -> adapter.setItems(ArrayList(it)) }
+                        it.data.let { it1 -> adapter.setItems(ArrayList(it1)) }
                     }
                 }
                 Resource.Status.ERROR -> {

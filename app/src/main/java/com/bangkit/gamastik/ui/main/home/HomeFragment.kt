@@ -24,7 +24,8 @@ import com.bangkit.gamastik.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment(), HomeAdapter.DiscoveryItemListener, RegionAdapter.RegionItemListener {
+class HomeFragment : BaseFragment(), HomeAdapter.DiscoveryItemListener,
+    RegionAdapter.RegionItemListener {
 
     private val homeViewModel: HomeViewModel by viewModels()
     lateinit var binding: FragmentHomeBinding
@@ -43,11 +44,15 @@ class HomeFragment : BaseFragment(), HomeAdapter.DiscoveryItemListener, RegionAd
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity?)?.supportActionBar?.hide()
-        getUserId()
         setRecyclerView()
         getRegionList()
         getDiscoveryBatik()
 
+        if (getUsername().isNullOrBlank()) {
+            getUserId()
+        } else {
+            binding.tvUserName.text = StringBuilder("Hello, ${getUsername()}")
+        }
         binding.ivLogout.setOnClickListener {
             logout()
         }
@@ -73,7 +78,8 @@ class HomeFragment : BaseFragment(), HomeAdapter.DiscoveryItemListener, RegionAd
         binding.rvBatik.adapter = adapter
 
         regionAdapter = RegionAdapter(this)
-        binding.rvRegion.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvRegion.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvRegion.setHasFixedSize(true)
         binding.rvRegion.adapter = regionAdapter
     }
@@ -104,6 +110,7 @@ class HomeFragment : BaseFragment(), HomeAdapter.DiscoveryItemListener, RegionAd
                     binding.progressBar.visibility = View.GONE
                     val data = it.data
                     if (data != null) {
+                        setUserName(data.data?.name)
                         binding.tvUserName.text = StringBuilder("Hello, ${data.data?.name}")
                     }
                 }
@@ -124,7 +131,7 @@ class HomeFragment : BaseFragment(), HomeAdapter.DiscoveryItemListener, RegionAd
                     binding.progressBar.visibility = View.GONE
                     val data = it.data
                     if (data != null) {
-                        it.data.let { it -> adapter.setItems(ArrayList(it)) }
+                        it.data.let { it1 -> adapter.setItems(ArrayList(it1)) }
                     }
                 }
                 Resource.Status.ERROR -> {
@@ -182,7 +189,7 @@ class HomeFragment : BaseFragment(), HomeAdapter.DiscoveryItemListener, RegionAd
 
     override fun onClicked(item: String?) {
         val intent = Intent(requireContext(), BatikByRegionActivity::class.java)
-        intent.putExtra(BatikDetailActivity.EXTRA_DATA, item)
+        intent.putExtra(BatikByRegionActivity.EXTRA_DATA, item)
         startActivity(intent)
     }
 }

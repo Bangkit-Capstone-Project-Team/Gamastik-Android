@@ -2,7 +2,6 @@ package com.bangkit.gamastik.ui.feature.discovery.searchresult
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.bangkit.gamastik.data.model.batik.detail.BatikDetailResponse
 import com.bangkit.gamastik.data.model.batik.search.BatikSearchRequest
 import com.bangkit.gamastik.data.model.batik.search.BatikSearchResponseItem
 import com.bangkit.gamastik.data.repository.AppRepository

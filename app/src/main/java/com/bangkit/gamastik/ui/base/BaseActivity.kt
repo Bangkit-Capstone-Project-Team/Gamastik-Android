@@ -20,6 +20,4 @@ open class BaseActivity : AppCompatActivity() {
 
     fun getToken() = preferencesHelper.getUserToken()
 
-    fun getUserName() = preferencesHelper.getUserName()
-
 }

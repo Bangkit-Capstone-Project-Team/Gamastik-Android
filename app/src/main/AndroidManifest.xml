@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.bangkit.gamastik">
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -16,8 +17,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Gamastik"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".ui.feature.discovery.byregion.BatikByRegionActivity"></activity>
+        android:usesCleartextTraffic="true"
+        android:fullBackupContent="@xml/backup_descriptor"
+        tools:ignore="UnusedAttribute">
+        <activity android:name=".ui.feature.discovery.byregion.BatikByRegionActivity" />
         <activity android:name=".ui.feature.batik.scanner.BatikScannerActivity" />
         <activity android:name=".ui.feature.batik.result.ScannerResultActivity" />
         <activity android:name=".ui.feature.recomendation.ProductRecomendationActivity" />

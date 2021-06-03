@@ -2,7 +2,6 @@
     <string name="app_name">Gamastik</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
     <string name="title_quiz">Quiz</string>
     <string name="insert_your_email">Insert your E-mail</string>
     <string name="gamastik">GAMASTIK</string>
@@ -30,18 +29,17 @@
     <string name="percent">%</string>
     <string name="back_button">Back Button</string>
     <string name="text_discover_batik_indonesia">Discover Batik Indonesia</string>
-    <string name="text_hint_search">Search batik here ...</string>
+    <string name="text_hint_search">Search batik here …</string>
     <string name="text_by_region">By Region</string>
     <string name="text_sample_regio">Jawa Barat</string>
     <string name="text_top_batik">Top Batik</string>
     <string name="text_see_product_recommendations">See product recommendations</string>
     <string name="text_result">Result</string>
     <string name="text_submit">Submit</string>
-    <string name="text_b">B</string>
-    <string name="text_a">A</string>
-    <string name="text_c">C</string>
-    <string name="text_d">D</string>
     <string name="finish">Finish</string>
     <string name="next_question">Go to Next Question</string>
     <string name="splas_screen">splas screen</string>
+    <string name="image_batik">image batik</string>
+    <string name="icon_user">icon user</string>
+    <string name="icon_logout">icon logout</string>
 </resources>

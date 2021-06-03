@@ -190,7 +190,7 @@ class QuizTestActivity : BaseActivity(), View.OnClickListener {
 
     private fun checkAnswer() {
         val question = mQuestionQuiz?.get(mCurrentPosition - 1)
-        if (question!!.answer != mSelectedChoicePosition) {
+        if (question!!.answer!!.lowercase() != mSelectedChoicePosition.lowercase()) {
             answerView(mSelectedChoicePosition, R.drawable.bg_choice_wrong)
         } else {
             mCorrectAnswer++

@@ -21,8 +21,9 @@ class HomeViewModel @Inject constructor(
 
     val userId =  repository.getUserId()
 
+    val regionList =  repository.getRRegionList()
+
     val profile: (Int) -> LiveData<Resource<ProfileResponse>> =
         { value -> value.let { repository.getProfile(it) } }
-
 
 }

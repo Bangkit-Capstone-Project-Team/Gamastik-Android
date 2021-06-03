@@ -1,4 +1,4 @@
-package com.bangkit.gamastik.ui.main.home
+package com.bangkit.gamastik.ui.main.home.adapter
 
 import android.view.LayoutInflater
 import android.view.View

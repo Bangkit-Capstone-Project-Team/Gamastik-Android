@@ -10,21 +10,26 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkit.gamastik.data.model.batik.discovery.BatikDiscoveryResponseItem
 import com.bangkit.gamastik.databinding.FragmentHomeBinding
 import com.bangkit.gamastik.ui.base.BaseFragment
 import com.bangkit.gamastik.ui.feature.auth.login.LoginActivity
 import com.bangkit.gamastik.ui.feature.discovery.batikdetail.BatikDetailActivity
+import com.bangkit.gamastik.ui.feature.discovery.byregion.BatikByRegionActivity
 import com.bangkit.gamastik.ui.feature.discovery.searchresult.SearchResultActivity
+import com.bangkit.gamastik.ui.main.home.adapter.HomeAdapter
+import com.bangkit.gamastik.ui.main.home.adapter.RegionAdapter
 import com.bangkit.gamastik.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment(), HomeAdapter.DiscoveryItemListener {
+class HomeFragment : BaseFragment(), HomeAdapter.DiscoveryItemListener, RegionAdapter.RegionItemListener {
 
     private val homeViewModel: HomeViewModel by viewModels()
     lateinit var binding: FragmentHomeBinding
     private lateinit var adapter: HomeAdapter
+    private lateinit var regionAdapter: RegionAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,6 +45,7 @@ class HomeFragment : BaseFragment(), HomeAdapter.DiscoveryItemListener {
         (activity as AppCompatActivity?)?.supportActionBar?.hide()
         getUserId()
         setRecyclerView()
+        getRegionList()
         getDiscoveryBatik()
 
         binding.ivLogout.setOnClickListener {
@@ -65,6 +71,11 @@ class HomeFragment : BaseFragment(), HomeAdapter.DiscoveryItemListener {
         binding.rvBatik.layoutManager = GridLayoutManager(context, 2)
         binding.rvBatik.setHasFixedSize(true)
         binding.rvBatik.adapter = adapter
+
+        regionAdapter = RegionAdapter(this)
+        binding.rvRegion.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvRegion.setHasFixedSize(true)
+        binding.rvRegion.adapter = regionAdapter
     }
 
     private fun getUserId() {
@@ -125,6 +136,25 @@ class HomeFragment : BaseFragment(), HomeAdapter.DiscoveryItemListener {
         })
     }
 
+    private fun getRegionList() {
+        homeViewModel.regionList.observe(viewLifecycleOwner, {
+            when (it.status) {
+                Resource.Status.SUCCESS -> {
+                    binding.progressBar.visibility = View.GONE
+                    val data = it.data?.data?.filter { it1 -> it1.length > 1 }
+                    if (data != null) {
+                        regionAdapter.setItems(ArrayList(data))
+                    }
+                }
+                Resource.Status.ERROR -> {
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(requireContext(), "Terjadi Kesalahan", Toast.LENGTH_SHORT).show()
+                }
+                Resource.Status.LOADING -> binding.progressBar.visibility = View.VISIBLE
+            }
+        })
+    }
+
 
     private fun logout() {
         homeViewModel.logout.observe(viewLifecycleOwner, {
@@ -147,6 +177,12 @@ class HomeFragment : BaseFragment(), HomeAdapter.DiscoveryItemListener {
     override fun onClicked(item: BatikDiscoveryResponseItem?) {
         val intent = Intent(requireContext(), BatikDetailActivity::class.java)
         intent.putExtra(BatikDetailActivity.EXTRA_DATA, item?.id)
+        startActivity(intent)
+    }
+
+    override fun onClicked(item: String?) {
+        val intent = Intent(requireContext(), BatikByRegionActivity::class.java)
+        intent.putExtra(BatikDetailActivity.EXTRA_DATA, item)
         startActivity(intent)
     }
 }

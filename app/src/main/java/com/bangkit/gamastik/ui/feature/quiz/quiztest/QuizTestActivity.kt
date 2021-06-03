@@ -3,13 +3,14 @@ package com.bangkit.gamastik.ui.feature.quiz.quiztest
 import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import com.bangkit.gamastik.R
-import com.bangkit.gamastik.data.model.quiz.DataItem
+import com.bangkit.gamastik.data.model.quiz.Question
 import com.bangkit.gamastik.databinding.ActivityQuizTestBinding
 import com.bangkit.gamastik.ui.base.BaseActivity
 import com.bangkit.gamastik.ui.feature.quiz.quizscore.QuizScoreActivity
@@ -21,17 +22,17 @@ class QuizTestActivity : BaseActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityQuizTestBinding
     private val quizViewModel: QuizTestViewModel by viewModels()
-    private var mQuestionQuiz : List<DataItem>? = null
+    private var mQuestionQuiz: ArrayList<Question>? = null
     private var mCurrentPosition: Int = 1
     private var mSelectedChoicePosition: String = ""
     private var mCorrectAnswer: Int = 0
+    private var isClickable = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityQuizTestBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        mQuestionQuiz = listOf(DataItem())
+        supportActionBar?.hide()
 
         getQuestion()
 
@@ -39,31 +40,46 @@ class QuizTestActivity : BaseActivity(), View.OnClickListener {
         binding.tvAnswerB.setOnClickListener(this)
         binding.tvAnswerC.setOnClickListener(this)
         binding.tvAnswerD.setOnClickListener(this)
+
+        binding.ivBack.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     override fun onClick(v: View?) {
-        when(v?.id) {
+        when (v?.id) {
             R.id.tv_answer_a -> {
-                setSelectedChoiceView(binding.tvAnswerA, "A")
+                if (isClickable) {
+                    setSelectedChoiceView(binding.tvAnswerA, "A")
+                }
             }
             R.id.tv_answer_b -> {
-                setSelectedChoiceView(binding.tvAnswerB, "B")
+                if (isClickable) {
+                    setSelectedChoiceView(binding.tvAnswerB, "B")
+                }
             }
             R.id.tv_answer_c -> {
-                setSelectedChoiceView(binding.tvAnswerC, "C")
+                if (isClickable) {
+                    setSelectedChoiceView(binding.tvAnswerC, "C")
+                }
             }
             R.id.tv_answer_d -> {
-                setSelectedChoiceView(binding.tvAnswerD, "D")
+                if (isClickable) {
+                    setSelectedChoiceView(binding.tvAnswerD, "D")
+                }
             }
             R.id.btn_submit -> {
                 if (mSelectedChoicePosition == "") {
                     mCurrentPosition++
+                    isClickable = true
                     getAnswer()
                 } else {
                     checkAnswer()
                     if (mCurrentPosition == mQuestionQuiz!!.size) {
                         binding.btnSubmit.text = getString(R.string.finish)
+                        isClickable = false
                     } else {
+                        isClickable = false
                         binding.btnSubmit.text = getString(R.string.next_question)
                     }
                     mSelectedChoicePosition = ""
@@ -74,7 +90,7 @@ class QuizTestActivity : BaseActivity(), View.OnClickListener {
 
     private fun getQuestion() {
         quizViewModel.quizQuestion.observe(this, {
-            when(it.status) {
+            when (it.status) {
                 Resource.Status.LOADING -> {
                     binding.apply {
                         pbQuiz.visibility = View.VISIBLE
@@ -88,7 +104,9 @@ class QuizTestActivity : BaseActivity(), View.OnClickListener {
                     }
                     val data = it.data?.data
                     if (data != null) {
-                        setQuestion(data)
+                        mQuestionQuiz = ArrayList()
+                        mQuestionQuiz?.addAll(data)
+                        setQuestion()
                     }
                 }
                 Resource.Status.ERROR -> {
@@ -101,20 +119,21 @@ class QuizTestActivity : BaseActivity(), View.OnClickListener {
         })
     }
 
-    private fun setQuestion(data: List<DataItem?>?) {
-        val question = data!![mCurrentPosition-1]
+    private fun setQuestion() {
+        val question = mQuestionQuiz!![mCurrentPosition - 1]
         setDefaultChoiceView()
         binding.apply {
-            if (mCurrentPosition == data.size) {
+            if (mCurrentPosition == mQuestionQuiz!!.size) {
                 btnSubmit.text = getString(R.string.finish)
             } else {
+                isClickable = true
                 btnSubmit.text = getString(R.string.text_submit)
             }
-            tvQuizQuestion.text = question?.question
-            tvAnswerA.text = question?.choiceA
-            tvAnswerB.text = question?.choiceB
-            tvAnswerC.text = question?.choiceC
-            tvAnswerD.text = question?.choiceD
+            tvQuizQuestion.text = question.question
+            tvAnswerA.text = question.choiceA
+            tvAnswerB.text = question.choiceB
+            tvAnswerC.text = question.choiceC
+            tvAnswerD.text = question.choiceD
         }
     }
 
@@ -160,9 +179,8 @@ class QuizTestActivity : BaseActivity(), View.OnClickListener {
 
     private fun getAnswer() {
         if (mCurrentPosition <= mQuestionQuiz!!.size) {
-            setQuestion(mQuestionQuiz)
-        }
-        else {
+            setQuestion()
+        } else {
             val intent = Intent(this, QuizScoreActivity::class.java)
             intent.putExtra(QuizScoreActivity.CORRECT_ANSWER, mCorrectAnswer)
             intent.putExtra(QuizScoreActivity.TOTAL_QUESTIONS, mQuestionQuiz!!.size)
@@ -179,6 +197,11 @@ class QuizTestActivity : BaseActivity(), View.OnClickListener {
             mCorrectAnswer++
         }
         answerView(question.answer, R.drawable.bg_choice_correct)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
     }
 
 }

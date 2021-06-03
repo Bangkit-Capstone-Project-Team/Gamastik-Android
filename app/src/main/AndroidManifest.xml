@@ -3,7 +3,9 @@
     package="com.bangkit.gamastik">
 
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera.any" />
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,7 +15,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Gamastik">
+        android:theme="@style/Theme.Gamastik"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ui.feature.discovery.byregion.BatikByRegionActivity"></activity>
         <activity android:name=".ui.feature.batik.scanner.BatikScannerActivity" />
         <activity android:name=".ui.feature.batik.result.ScannerResultActivity" />
         <activity android:name=".ui.feature.recomendation.ProductRecomendationActivity" />

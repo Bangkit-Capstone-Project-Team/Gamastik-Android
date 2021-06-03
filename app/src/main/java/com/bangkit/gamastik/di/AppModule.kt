@@ -2,6 +2,7 @@ package com.bangkit.gamastik.di
 
 import android.content.Context
 import com.bangkit.gamastik.BuildConfig.BASE_URL
+import com.bangkit.gamastik.BuildConfig.DEBUG_URL
 import com.bangkit.gamastik.data.local.PreferencesHelper
 import com.bangkit.gamastik.data.remote.AppService
 import com.bangkit.gamastik.data.remote.RemoteDataSource
@@ -31,7 +32,7 @@ object AppModule {
     @Singleton
     @Provides
     fun provideRetrofit(gson: Gson, client: OkHttpClient): Retrofit = Retrofit.Builder()
-        .baseUrl(BASE_URL)
+        .baseUrl(DEBUG_URL)
         .client(client)
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()

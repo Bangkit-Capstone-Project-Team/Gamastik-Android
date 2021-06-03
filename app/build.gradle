@@ -26,7 +26,8 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-        buildConfigField "String", "BASE_URL", "\"https://capstone-b21-cap026.herokuapp.com/api/\""
+        buildConfigField "String", "DEBUG_URL", "\"https://capstone-b21-cap026.herokuapp.com/api/\""
+        buildConfigField "String", "BASE_URL", "\"http://35.187.255.90/api/\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

@@ -32,6 +32,8 @@ class ScannerResultActivity : BaseActivity() {
         supportActionBar?.hide()
 
         val file: File? = intent.getSerializableExtra(EXTRA_DATA) as File?
+        Glide.with(applicationContext).asBitmap().load(file).into(binding.ivBatikResult)
+
         val imgBitmap = BitmapFactory.decodeFile(file?.path)
         batikRecognition(imgBitmap)
 
@@ -67,10 +69,6 @@ class ScannerResultActivity : BaseActivity() {
         val image = TensorImage.fromBitmap(img)
         val result = model.process(image).probabilityAsCategoryList.toList()
             .sortedByDescending { it.score }[0]
-
-        Glide.with(applicationContext)
-            .load(img)
-            .into(binding.ivBatikResult)
 
         binding.tvBatikResult.text = result.label
         model.close()

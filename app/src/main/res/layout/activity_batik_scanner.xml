@@ -37,12 +37,13 @@
 
     <androidx.camera.view.PreviewView
         android:id="@+id/viewFinder"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
-        android:layout_marginStart="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="120dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="120dp"
+        app:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

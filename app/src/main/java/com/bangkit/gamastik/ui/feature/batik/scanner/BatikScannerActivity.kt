@@ -3,16 +3,13 @@ package com.bangkit.gamastik.ui.feature.batik.scanner
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.util.Rational
 import android.util.Size
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.*
-import androidx.camera.core.impl.ImageCaptureConfig
+import androidx.camera.core.AspectRatio.RATIO_4_3
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -125,6 +122,7 @@ class BatikScannerActivity : BaseActivity() {
 
             // Preview
             val preview = Preview.Builder()
+                .setTargetAspectRatio(RATIO_4_3)
                 .build()
                 .also {
                     it.setSurfaceProvider(binding.viewFinder.surfaceProvider)

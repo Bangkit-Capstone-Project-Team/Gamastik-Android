@@ -115,6 +115,7 @@
                 android:backgroundTint="#FA8624"
                 android:fontFamily="@font/montserrat_medium"
                 android:letterSpacing="0"
+                android:visibility="gone"
                 android:text="@string/leaderboard"
                 android:textAlignment="textEnd"
                 android:textAllCaps="false"

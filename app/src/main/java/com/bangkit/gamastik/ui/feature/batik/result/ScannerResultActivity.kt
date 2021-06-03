@@ -70,7 +70,7 @@ class ScannerResultActivity : BaseActivity() {
         val result = model.process(image).probabilityAsCategoryList.toList()
             .sortedByDescending { it.score }[0]
 
-        binding.tvBatikResult.text = result.label
+        binding.tvBatikResult.text = result.label.replace("-", " ")
         model.close()
     }
 

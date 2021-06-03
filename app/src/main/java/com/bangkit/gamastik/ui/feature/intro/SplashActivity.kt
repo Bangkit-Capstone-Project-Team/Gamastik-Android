@@ -4,15 +4,20 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import com.bangkit.gamastik.R
+import com.bangkit.gamastik.databinding.ActivitySplashBinding
 import com.bangkit.gamastik.ui.base.BaseActivity
 import com.bangkit.gamastik.ui.feature.auth.login.LoginActivity
 import com.bangkit.gamastik.ui.main.MainActivity
+import com.bumptech.glide.Glide
 
 class SplashActivity : BaseActivity() {
+    lateinit var binding:ActivitySplashBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        binding = ActivitySplashBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
+        Glide.with(this).load(R.drawable.img_splash).into(binding.imgSplash)
         Handler(mainLooper).postDelayed({
             checklogin()
         }, 3000)

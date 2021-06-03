@@ -2,6 +2,7 @@ package com.bangkit.gamastik.data.repository
 
 import com.bangkit.gamastik.data.model.auth.login.LoginRequest
 import com.bangkit.gamastik.data.model.auth.register.RegisterRequest
+import com.bangkit.gamastik.data.model.batik.byregion.BatikByRegionRequest
 import com.bangkit.gamastik.data.model.batik.search.BatikSearchRequest
 import com.bangkit.gamastik.data.remote.RemoteDataSource
 import com.bangkit.gamastik.utils.remoteOnlyOperation
@@ -36,8 +37,16 @@ class AppRepository @Inject constructor(
         networkCall = { remoteDataSource.getBatikDiscovery() }
     )
 
+    fun getRRegionList() = remoteOnlyOperation(
+        networkCall = { remoteDataSource.getRegionList() }
+    )
+
     fun getBatikDetail(id: Int) = remoteOnlyOperation(
         networkCall = { remoteDataSource.getBatikDetail(id) }
+    )
+
+    fun getBatikByRegion(request: BatikByRegionRequest) = remoteOnlyOperation(
+        networkCall = { remoteDataSource.getBatikByRegion(request) }
     )
 
     fun getBatikSearch(request: BatikSearchRequest) = remoteOnlyOperation(

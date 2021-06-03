@@ -8,8 +8,11 @@ import com.bangkit.gamastik.data.model.auth.logout.LogoutResponse
 import com.bangkit.gamastik.data.model.auth.profile.ProfileResponse
 import com.bangkit.gamastik.data.model.auth.register.RegisterRequest
 import com.bangkit.gamastik.data.model.auth.register.RegisterResponse
+import com.bangkit.gamastik.data.model.batik.BatikByRegionResponse
+import com.bangkit.gamastik.data.model.batik.byregion.BatikByRegionRequest
 import com.bangkit.gamastik.data.model.batik.detail.BatikDetailResponse
 import com.bangkit.gamastik.data.model.batik.discovery.BatikDiscoveryResponseItem
+import com.bangkit.gamastik.data.model.batik.region.RegionListResponse
 import com.bangkit.gamastik.data.model.batik.search.BatikSearchRequest
 import com.bangkit.gamastik.data.model.batik.search.BatikSearchResponseItem
 import com.bangkit.gamastik.data.model.quiz.QuizResponse
@@ -34,11 +37,17 @@ interface AppService {
     @POST("login")
     suspend fun login(@Body request: LoginRequest): Response<LoginResponse>
 
-    @GET("logout")
+    @POST("logout")
     suspend fun logout(): Response<LogoutResponse>
 
     @GET("batik/discovery")
     suspend fun getBatikDiscovery(): Response<List<BatikDiscoveryResponseItem>>
+
+    @POST("batik/filter/daerah")
+    suspend fun getBatikByRegion(@Body request: BatikByRegionRequest): Response<BatikByRegionResponse>
+
+    @GET("batik/list/daerah")
+    suspend fun getRegionList(): Response<RegionListResponse>
 
     @GET("batik/{id}")
     suspend fun getBatikDetail(@Path("id") id: Int): Response<BatikDetailResponse>

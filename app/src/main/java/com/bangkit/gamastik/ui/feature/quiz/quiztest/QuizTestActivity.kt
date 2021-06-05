@@ -3,6 +3,7 @@ package com.bangkit.gamastik.ui.feature.quiz.quiztest
 import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
@@ -190,12 +191,12 @@ class QuizTestActivity : BaseActivity(), View.OnClickListener {
 
     private fun checkAnswer() {
         val question = mQuestionQuiz?.get(mCurrentPosition - 1)
-        if (question!!.answer!!.lowercase() != mSelectedChoicePosition.lowercase()) {
+        if (question!!.answer!!.uppercase() != mSelectedChoicePosition.uppercase()) {
             answerView(mSelectedChoicePosition, R.drawable.bg_choice_wrong)
         } else {
             mCorrectAnswer++
         }
-        answerView(question.answer, R.drawable.bg_choice_correct)
+        answerView(question.answer!!.uppercase(), R.drawable.bg_choice_correct)
     }
 
     override fun onBackPressed() {

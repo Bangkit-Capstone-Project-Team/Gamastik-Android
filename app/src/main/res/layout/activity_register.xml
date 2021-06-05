@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
     tools:context=".ui.feature.auth.register.RegisterActivity">
 
     <ProgressBar
@@ -109,6 +108,7 @@
                         android:hint="@string/insert_your_name"
                         android:inputType="textAutoComplete"
                         android:textColor="@color/black"
+                        android:textColorHint="@color/grey"
                         android:textSize="@dimen/large_text"
                         android:importantForAutofill="no" />
                 </LinearLayout>
@@ -150,6 +150,7 @@
                         android:hint="@string/insert_your_email"
                         android:inputType="textEmailAddress"
                         android:textColor="@color/black"
+                        android:textColorHint="@color/grey"
                         android:textSize="@dimen/large_text"
                         android:importantForAutofill="no" />
                 </LinearLayout>
@@ -189,22 +190,14 @@
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/white"
                         android:drawablePadding="@dimen/large_dimen"
+                        android:textColorHint="@color/grey"
                         android:hint="@string/insert_your_new_password"
                         android:inputType="textPassword"
                         android:textColor="@color/black"
+
                         android:textSize="@dimen/large_text"
                         android:importantForAutofill="no" />
                 </LinearLayout>
-
-                <!--                <EditText-->
-                <!--                    android:id="@+id/edt_password_reg"-->
-                <!--                    style="@style/edit_text_login"-->
-                <!--                    android:hint="@string/insert_your_new_password"-->
-                <!--                    android:importantForAutofill="no"-->
-                <!--                    android:inputType="textPassword"-->
-                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
-                <!--                    app:layout_constraintStart_toStartOf="parent"-->
-                <!--                    app:layout_constraintTop_toBottomOf="@id/password" />-->
 
                 <TextView
                     android:id="@+id/re_password"
@@ -244,6 +237,7 @@
                         android:hint="@string/insert_your_new_password_again"
                         android:inputType="textPassword"
                         android:textColor="@color/black"
+                        android:textColorHint="@color/grey"
                         android:textSize="@dimen/large_text"
                         android:importantForAutofill="no" />
                 </LinearLayout>

@@ -24,7 +24,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/text_sample_regio"
                 android:fontFamily="@font/montserrat_medium"
-                android:textColor="@color/black"
                 android:textSize="@dimen/normal_text"
                 android:layout_margin="@dimen/large_dimen"
                 android:layout_marginStart="4dp"

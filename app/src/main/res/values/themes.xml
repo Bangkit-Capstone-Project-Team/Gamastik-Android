@@ -21,4 +21,8 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <style name="Theme.Gamastik.Quiz" >
+        <item name="android:background">@drawable/bg_choice_default</item>
+    </style>
+
 </resources>
